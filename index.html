@@ -15,18 +15,17 @@
         <a href="/">Strategic Investments Home Inspection</a>
       </h1>
       <nav>
-        {{#if loggedIn}}
+        <div class="topnav">
+            <a href="#About">About</a>
+            <a href="#Services">Services</a>
+            <a href="#Contact">Contact</a>
+            {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-        <ol>
-          <li>About Us</li>
-          <li>Services</li>
-          <li>Contact</li>
-          <li>Schedule Inspection</li>
-        </ol>
+          </div>
       </nav>
     </header>
     <main>
