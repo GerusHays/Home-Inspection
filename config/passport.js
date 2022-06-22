@@ -1,74 +1,52 @@
-// passport
-var express = require('express');
-var passport = require('passport');
-var LocalStrategy = require('passport-local');
-var crypto = require('crypto');
-var db = require('../db');
-passport.use(new LocalStrategy(function verify(username, password, cb) {
-    db.get('SELECT * FROM users WHERE username = ?', [ username ], function(err, row) {
-      if (err) { return cb(err); }
-      if (!row) { return cb(null, false, { message: 'Incorrect username or password.' }); }
-  
-      crypto.pbkdf2(password, row.salt, 310000, 32, 'sha256', function(err, hashedPassword) {
-        if (err) { return cb(err); }
-        if (!crypto.timingSafeEqual(row.hashed_password, hashedPassword)) {
-          return cb(null, false, { message: 'Incorrect username or password.' });
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+
+const db = require("../models");
+
+// Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
+passport.use(
+  new LocalStrategy(
+    // Our user will sign in using an email, rather than a "username"
+    {
+      usernameField: "email"
+    },
+    (email, password, done) => {
+      // When a user tries to sign in this code runs
+      db.User.findOne({
+        where: {
+          email: email
         }
-        return cb(null, row);
+      }).then(dbUser => {
+        // If there's no user with the given email
+        console.log(dbUser);
+        if (!dbUser) {
+          return done(null, false, {
+            message: "Incorrect email."
+          });
+        }
+        // If there is a user with the given email, but the password the user gives us is incorrect
+        else if (!dbUser.validPassword(password)) {
+          return done(null, false, {
+            message: "Incorrect password."
+          });
+        }
+        // If none of the above, return the user
+        return done(null, dbUser);
       });
-    });
-  }));
-var router = express.Router();
-passport.serializeUser(function(user, cb) {
-    process.nextTick(function() {
-      cb(null, { id: user.id, username: user.username });
-    });
-  });
-  
-  passport.deserializeUser(function(user, cb) {
-    process.nextTick(function() {
-      return cb(null, user);
-    });
-  });
-router.get('/login', function(req, res, next) {
-  res.render('login');
+    }
+  )
+);
+
+// In order to help keep authentication state across HTTP requests,
+// Sequelize needs to serialize and deserialize the user
+// Just consider this part boilerplate needed to make it all work
+passport.serializeUser((user, cb) => {
+  cb(null, user);
 });
 
-router.post('/login/password', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login'
-  }));
+passport.deserializeUser((obj, cb) => {
+  cb(null, obj);
+});
 
-  router.post('/logout', function(req, res, next) {
-    req.logout(function(err) {
-      if (err) { return next(err); }
-      res.redirect('/');
-    });
-  });
-
-  router.get('/signup', function(req, res, next) {
-    res.render('signup');
-  });
-
-  router.post('/signup', function(req, res, next) {
-    var salt = crypto.randomBytes(16);
-    crypto.pbkdf2(req.body.password, salt, 310000, 32, 'sha256', function(err, hashedPassword) {
-      if (err) { return next(err); }
-      db.run('INSERT INTO users (username, hashed_password, salt) VALUES (?, ?, ?)', [
-        req.body.username,
-        hashedPassword,
-        salt
-      ], function(err) {
-        if (err) { return next(err); }
-        var user = {
-          id: this.lastID,
-          username: req.body.username
-        };
-        req.login(user, function(err) {
-          if (err) { return next(err); }
-          res.redirect('/');
-        });
-      });
-    });
-  });
+// Exporting our configured passport
 module.exports = passport;
