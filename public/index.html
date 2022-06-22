@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Investments Home Inspection</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
-    This is a test
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Strategic Investments Home Inspection</a>
+      </h1>
+      <nav>
+        <div class="topnav">
+          <a href="#About">About</a>
+          <a href="#Services">Services</a>
+          <a href="#Contact">Contact</a>
+          {{#if loggedIn}}
+          <a href="/dashboard">dashboard</a>
+          <button id="logout" class="btn-no-style">logout</button>
+          {{else}}
+          <a href="/login">login</a>
+          {{/if}}
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="about-us" <h3>About Us</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure quam pariatur dolorum incidunt
+            commodi. Nemo dolor quis laborum minus molestias veritatis animi eaque. Natus nulla beatae porro corrupti
+            libero?</p>
+        </div>
+        <div class="services">
+          <h3>Services</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto repellat facere asperiores fugit eos
+            voluptates animi autem corporis! Amet quod aspernatur iure reprehenderit! Doloremque itaque omnis maiores
+            veniam quo cupiditate!</p>
+        </div>
+        <div class="reviews" <h3>Satisfied Customers</h3>
+          <div class="sign-up">
+            <h3>Sign up for an inspection today!</h3>
+            <p class="sign-up-details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ab quaerat
+              repellat pariatur, odio et incidunt eveniet omnis tempore totam obcaecati rerum, cum quis aspernatur ipsa
+              numquam! Velit, fugit alias.</p>
+          </div>
+          <div class="sign-up-form">
+            <form>
+              <label for="name">Enter full name:</label>
+              <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
+              <label for="email">Enter email address:</label>
+              <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
+              <label for="phone">Enter a telephone number:</label>
+              <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
+              <label for="address">Enter street address</label>
+              <input type="addy" placeholder="Street Address" name="adress" id="address" class="form-input" />
+              <label for="city">City and State</label>
+              <input type="sity-state" placeholder="City, State Zip" name="city-state" id="city-state"
+                class="city-state" />
+              <label for="details">Details</label>
+              <input type="details" placeholder="Add details" name="details" id="details" class="details" />
+              <button type="submit">
+                Sign-Up
+              </button>
+            </form>
+          </div>
+
+      </section>
+
+
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
+
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>
