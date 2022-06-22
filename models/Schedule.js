@@ -1,8 +1,8 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
 
-class Schedule extends Model {}
+// class Schedule extends Model {}
 
-Schedule.init()
+// Schedule.init()
 
-module.exports = Schedule;
+// module.exports = Schedule;
