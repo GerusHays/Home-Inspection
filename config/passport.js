@@ -71,4 +71,4 @@ router.post('/login/password', passport.authenticate('local', {
       });
     });
   });
-module.exports = router;
+module.exports = passport;
