@@ -1,32 +1,37 @@
-const express = require('express');
-const htmlRoutes = require('./routes/htmlRoutes');
-const PORT = process.env.PORT || 3001;
-const app = express();
+var express = require("express");
+var session = require("express-session");
+var passport = require("./config/passport");
 
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 8080;
+var db = require("./models");
+
+// Creating express app and configuring middleware needed for authentication
+var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
-app.use('/', htmlRoutes);
+app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.listen(PORT, () => {
-    console.log(`Server is listening on port http://localhost:${PORT}/`);
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
 
-//TODO: Connect passportjs
-// var authRouter = require('./routes/auth');
-// var logger = require('morgan');
-// var passport = require('passport');
-// var session = require('express-session');
-
-// var SQLiteStore = require('connect-sqlite3')(session);
-
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(session({
-//   secret: 'keyboard cat',
-//   resave: false,
-//   saveUninitialized: false,
-//   store: new SQLiteStore({ db: 'sessions.db', dir: './var/db' })
-// }));
-// app.use(passport.authenticate('session'));
-
-// app.use('/', authRouter);
+// app.engine(".hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
+// app.set("view engine", "hbs");

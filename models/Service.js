@@ -1,8 +1,8 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
 
-class Service extends Model {}
+// class Service extends Model {}
 
-Service.init()
+// Service.init()
 
-module.exports = Service;
+// module.exports = Service;

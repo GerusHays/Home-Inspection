@@ -1,8 +1,8 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
 
-class Inspector extends Model {}
+// class Inspector extends Model {}
 
-Inspector.init()
+// Inspector.init()
 
-module.exports = Inspector;
+// module.exports = Inspector;

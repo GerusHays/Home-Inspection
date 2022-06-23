@@ -29,8 +29,10 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^6.20.1"
+    "sequelize": "^6.20.1",
+    "sqlite3": "^5.0.8"
   },
   "devDependencies": {
     "jest": "^25.1.0"
