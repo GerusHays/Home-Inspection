@@ -55,11 +55,7 @@ router.get('/', (req, res) => {
                 include: [
                     {
                         model: Service,
-                        attributes: [
-                            'name', 
-                            'description', 
-                            'price'
-                        ],
+                        attributes: ['name', 'description'],
                     }
                 ]
             }

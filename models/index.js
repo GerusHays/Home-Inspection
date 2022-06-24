@@ -25,8 +25,8 @@ Client.hasMany(Schedule, { foreignKey: 'client_id' });
 Schedule_detail.belongsTo(Schedule, { foreignKey: 'schedule_id' });
 Schedule.hasMany(Schedule_detail, { foreignKey: 'schedule_id' });
 
-Schedule_detail.hasMany(Service, { foreignKey: 'service_id' });
-Service.belongsTo(Schedule_detail, { foreignKey: 'service_id' });
+Service.hasOne(Schedule_detail, { foreignKey: 'service_id' });
+Schedule_detail.belongsTo(Service, { foreignKey: 'service_id' });
 
 
 
