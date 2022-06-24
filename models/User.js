@@ -1,5 +1,5 @@
 // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
-var bcrypt = require("bcrypt");
+var bcrypt = require("bcryptjs");
 
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
@@ -35,14 +35,3 @@ module.exports = function (sequelize, DataTypes) {
   });
   return User;
 };
-
-
-
-// const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
-
-// class Client extends Model {}
-
-// Client.init()
-
-// module.exports = User;
