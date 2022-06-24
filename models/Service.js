@@ -7,6 +7,7 @@ Service.init(
     {
         id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
@@ -14,7 +15,7 @@ Service.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Description: {
+        description: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -26,6 +27,7 @@ Service.init(
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'service'
