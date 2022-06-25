@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+}
+
+.wrapper {
+    background-color: yellow;
+}
+
+.hero .about-us {
+    background-image: url('/public/images/adobe-stock-home-insp.jpeg');
+    height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  width: auto;
+  height: 300px;
+  color: white;
+  font-size: 35px;
+}
+
+.services {
+    font-size: large;
+    background-color: aquamarine;
+    padding: 60px;
+}
+
+.reviews {
+    background-color: blue;
+    padding: 60px;
+}
+
+.sign-up {
+    background-color: blueviolet;
+    padding: 60px;
+}
+
+.sign-up-form {
+    background-color: grey;
+    padding: 60px;
+}
