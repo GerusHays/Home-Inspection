@@ -91,13 +91,14 @@ body {
     
 }
 
-.form {
-    width: 90%;
-    max-width: 600px;
+.sign-up-form form {
+    width: 50%;
 }
+
 
 .input-group {
     margin-bottom: 35px;
+    width: 100%;
     position: relative;
     color: white;
 }
