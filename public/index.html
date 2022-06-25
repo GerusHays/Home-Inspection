@@ -57,9 +57,13 @@
           <img src="../public/images/AdobeStock_2360944.jpeg" alt="list of things to look at for a home inspection"  class="float-left" />
           <h3>Additional services</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus odit, quod molestiae aliquam quae numquam nihil a nesciunt blanditiis? Placeat repellat corporis, blanditiis eaque sed optio rem. Autem, odit vel.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequatur, iusto recusandae exercitationem eaque soluta aliquam maiores non magnam perferendis, accusamus et amet nisi adipisci voluptates repellendus impedit, cum eum.
           </p>
       </div>
+
+
+
+
 
       </div>
 
@@ -71,21 +75,40 @@
               numquam! Velit, fugit alias.</p>
           </div>
         
+
           <div class="sign-up-form">
             <form>
-              <label for="name">Enter full name:</label>
-              <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
-              <label for="email">Enter email address:</label>
-              <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
-              <label for="phone">Enter a telephone number:</label>
-              <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-              <label for="address">Enter street address</label>
-              <input type="addy" placeholder="Street Address" name="adress" id="address" class="form-input" />
-              <label for="city">City and State</label>
-              <input type="sity-state" placeholder="City, State Zip" name="city-state" id="city-state"
-                class="city-state" />
-              <label for="details">Details</label>
-              <input type="details" placeholder="Add details" name="details" id="details" class="details" />
+              
+              <div class="input-group">
+                <input type="text" id="name" required/>
+                <label for="name"><i class="fa-solid fa-user"></i> Your full name:</label>
+              </div>
+
+            <div class="input-group">
+              <input type="email" id="email"/ required>
+              <label for="email"><i class="fa-solid fa-envelope"></i> Your email address:</label>
+              </div>
+
+            <div class="input-group">
+              <input type="tel" id="phone"/ required>
+              <label for="phone"><i class="fa-solid fa-phone"></i> Your number:</label>
+            </div>
+
+            <div class="input-group">
+              <input type="address" id="address"/ required>
+              <label for="address"><i class="fa-solid fa-map"></i> Street address:</label>
+            </div>
+
+            <div class="input-group">
+              <input type="city-state" id="city-state"/ required>
+              <label for="city"><i class="fas fa-solid fa-map"></i> City and State:</label>
+            </div>
+
+            <div class="input-group">
+              <textarea id="message" rows="8" required></textarea>
+              <label for="message"><i class="fa-solid fa-message"></i> Your Message:</label>
+            </div>
+
               <button type="submit">
                 Sign-Up
               </button>

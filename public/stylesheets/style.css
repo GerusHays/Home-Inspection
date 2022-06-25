@@ -1,11 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: 100%;
+    
 }
 
 .wrapper {
@@ -17,6 +17,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
   position: relative;
   text-align: center;
   width: 100%;
@@ -31,7 +32,7 @@ body {
     margin-bottom: 20px;
     padding: 50px;
     height: 300px;
-    background-color: #2a9df4;
+    background-color: #2590e7;
     color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
@@ -55,6 +56,7 @@ body {
 .services-two img {
     max-height: 200px;
     width: auto;
+    float: right;
 }
 
 .float-right {
@@ -75,4 +77,75 @@ body {
 .services-two h3 {
     margin-bottom: 20px;
     font-size: 36px;
+}
+
+.sign-up-form {
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.7), #3551b5), url(../images/AdobeStock_58371096.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.form {
+    width: 90%;
+    max-width: 600px;
+}
+
+.input-group {
+    margin-bottom: 35px;
+    position: relative;
+    color: white;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1.5px solid #fff;
+    background: transparent;
+    font-size: 15px;
+}
+
+label {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #fff;
+    cursor: text;
+    transition: 0.2s;
+}
+
+button {
+    padding: 10px 0;
+    color: #fff;
+    outline: none;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+}
+
+input:focus~label,
+input:valid~label, 
+textarea:focus~label,
+textarea:valid~label {
+    top: -35px;
+    font-size: 14px;
+
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row . .input-group {
+    flex-basis: 48%;
 }
