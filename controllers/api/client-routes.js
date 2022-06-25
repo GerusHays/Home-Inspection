@@ -94,4 +94,17 @@ router.put('/:id', (req, res) => {
         });
 });
 
+router.delete('/:id', (req, res) => {
+    Client.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbClientData => res.json(dbClientData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;

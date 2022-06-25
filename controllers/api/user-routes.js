@@ -34,6 +34,48 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    User.create({
+        user_name: req.body.user_name,
+        password: req.body.password
+    })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
+router.put('/:id', (req, res) => {
+    User.update(
+        {
+            user_name: req.body.user_name,
+            password: req.body.password
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    User.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 module.exports = router;
