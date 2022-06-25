@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -24,11 +25,23 @@ body {
   font-size: 35px;
 }
 
+
+
 .services {
     margin-bottom: 20px;
     padding: 50px;
     height: 300px;
-    background-color: gray;
+    background-color: #2a9df4;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.services-two {
+    margin-bottom: 20px;
+    padding: 50px;
+    height: 300px;
+    background-color: #2a9df4;
     color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
@@ -39,12 +52,27 @@ body {
     width: auto;
 }
 
+.services-two img {
+    max-height: 200px;
+    width: auto;
+}
+
 .float-right {
     float: right;
     margin-right: 20px;
 }
 
 .services h3 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.float-left {
+    float: left;
+    margin-left: 20px;
+}
+
+.services-two h3 {
     margin-bottom: 20px;
     font-size: 36px;
 }
