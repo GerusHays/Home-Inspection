@@ -6,49 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Strategic Investments Home Inspection</title>
   <link rel="stylesheet" href="../public/stylesheets/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">Strategic Investments Home Inspection</a>
-      </h1>
-      <nav>
-        <div class="topnav">
-          <a href="#About">About</a>
-          <a href="#Services">Services</a>
-          <a href="#Contact">Contact</a>
-          {{#if loggedIn}}
-          <a href="/dashboard">dashboard</a>
-          <button id="logout" class="btn-no-style">logout</button>
-          {{else}}
-          <a href="/login">login</a>
-          {{/if}}
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Strategic Investments Home Inspection</a>
+          </div>
+          <ol class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Sign up</a></li>
+          </ol>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
         </div>
       </nav>
     </header>
     <main>
+
       <section class="hero">
         <div class="about-us">
-          <h3>About Us</h3>
+          <div class="hero-text">
+          <h2>About Us</h2>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure quam pariatur dolorum incidunt
             commodi. Nemo dolor quis laborum minus molestias veritatis animi eaque. Natus nulla beatae porro corrupti
             libero?</p>
+          </div>
         </div>
+
         <div class="services">
           <h3>Services</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto repellat facere asperiores fugit eos
             voluptates animi autem corporis! Amet quod aspernatur iure reprehenderit! Doloremque itaque omnis maiores
             veniam quo cupiditate!</p>
         </div>
-        <div class="reviews" <h3>Satisfied Customers</h3>
+
+        <div class="reviews"> <h3>Satisfied Customers</h3>
           <div class="sign-up">
             <h3>Sign up for an inspection today!</h3>
             <p class="sign-up-details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ab quaerat
               repellat pariatur, odio et incidunt eveniet omnis tempore totam obcaecati rerum, cum quis aspernatur ipsa
               numquam! Velit, fugit alias.</p>
           </div>
+
           <div class="sign-up-form">
             <form>
               <label for="name">Enter full name:</label>

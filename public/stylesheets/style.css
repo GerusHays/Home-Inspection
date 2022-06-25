@@ -8,40 +8,18 @@ body {
 }
 
 .wrapper {
-    background-color: yellow;
+    
 }
 
 .hero .about-us {
-    background-image: url('/public/images/adobe-stock-home-insp.jpeg');
-    height: 50%;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/images/adobe-stock-home-insp.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   text-align: center;
-  width: auto;
-  height: 300px;
+  width: 100%;
+  height: 350px;
   color: white;
   font-size: 35px;
-}
-
-.services {
-    font-size: large;
-    background-color: aquamarine;
-    padding: 60px;
-}
-
-.reviews {
-    background-color: blue;
-    padding: 60px;
-}
-
-.sign-up {
-    background-color: blueviolet;
-    padding: 60px;
-}
-
-.sign-up-form {
-    background-color: grey;
-    padding: 60px;
 }
