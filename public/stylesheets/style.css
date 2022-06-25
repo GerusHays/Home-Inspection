@@ -146,6 +146,6 @@ textarea:valid~label {
     justify-content: space-between;
 }
 
-.row . .input-group {
+.row .input-group {
     flex-basis: 48%;
 }
