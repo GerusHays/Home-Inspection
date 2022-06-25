@@ -1,3 +1,2 @@
-DROP DATABASE IF EXISTS library;
-CREATE DATABASE library;
-USE library;
+DROP DATABASE IF EXISTS home_inspection_db;
+CREATE DATABASE home_inspection_db;

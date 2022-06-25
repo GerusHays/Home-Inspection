@@ -1,49 +1,34 @@
-'use strict';
+// importing the models
+const User = require('./User');
+const Client = require('./Client');
+const Inspector = require('./Inspector');
+const Schedule = require('./Schedule');
+const Service = require('./Service');
+const Schedule_detail = require('./Schedule_detail');
 
-var fs        = require('fs');
-var path      = require('path');
-var Sequelize = require('sequelize');
-var basename  = path.basename(module.filename);
-var env       = process.env.NODE_ENV || 'development';
-var config    = require(__dirname + '/../config/config.json')[env];
-var db        = {};
+// creating associations
+// User belongs to one Client or one Inspector
+User.hasOne(Client, { foreignKey: 'user_id' });
+Client.belongsTo(User, { foreignKey: 'user_id' });
+User.hasOne(Inspector, { foreignKey: 'user_id' });
+Inspector.belongsTo(User, { foreignKey: 'user_id' });
 
-if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+Schedule.belongsTo(Client, { foreignKey: 'client_id' });
+Schedule.belongsTo(Inspector, { foreignKey: 'inspector_id' });
 
-fs
-  .readdirSync(__dirname)
-  .filter(function(file) {
-    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-  })
-  .forEach(function(file) {
-    var model = sequelize['import'](path.join(__dirname, file));
-    db[model.name] = model;
-  });
+Inspector.hasMany(Schedule, { foreignKey: 'inspector_id' });
+Client.hasMany(Schedule, { foreignKey: 'client_id' });
 
-Object.keys(db).forEach(function(modelName) {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
-});
+// Schedule.hasMany(Service, { foreignKey: 'schedule_id' });
+// Service.belongsTo(Schedule, { foreignKey: 'schedule_id' });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+Schedule_detail.belongsTo(Schedule, { foreignKey: 'schedule_id' });
+Schedule.hasMany(Schedule_detail, { foreignKey: 'schedule_id' });
 
-module.exports = db;
+Service.hasOne(Schedule_detail, { foreignKey: 'service_id' });
+Schedule_detail.belongsTo(Service, { foreignKey: 'service_id' });
 
 
 
 
-// // importing the models
-// const Client = require('./Client');
-// const Inspector = require('./Inspector');
-// const Schedule = require('./Schedule');
-// const Services = require('./Service');
-
-
-
-// module.exports = {Client, Inspector, Schedule, Services};
+module.exports = {User, Client, Inspector, Schedule, Service, Schedule_detail};

@@ -1,37 +1,42 @@
-var express = require("express");
-var session = require("express-session");
-var passport = require("./config/passport");
+const path = require('path');
+const express = require('express');
+const routes = require('./controllers');
+const sequelize = require('./config/connection');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 
-// Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 8080;
-var db = require("./models");
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Creating express app and configuring middleware needed for authentication
-var app = express();
-app.use(express.urlencoded({ extended: true }));
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 app.use(express.json());
-app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+app.use(routes);
 
-// Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(function () {
-  app.listen(PORT, function () {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Server is listening on port http://localhost:${PORT}/`));
 });
 
-// app.engine(".hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
-// app.set("view engine", "hbs");
+
+
+//TODO: Connect passportjs
+// var authRouter = require('./routes/auth');
+// var logger = require('morgan');
+// var passport = require('passport');
+// var session = require('express-session');
+
+// var SQLiteStore = require('connect-sqlite3')(session);
+
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(session({
+//   secret: 'keyboard cat',
+//   resave: false,
+//   saveUninitialized: false,
+//   store: new SQLiteStore({ db: 'sessions.db', dir: './var/db' })
+// }));
+// app.use(passport.authenticate('session'));
+
+// app.use('/', authRouter);

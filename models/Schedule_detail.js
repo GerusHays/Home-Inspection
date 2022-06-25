@@ -1,34 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Schedule extends Model {}
+class Schedule_detail extends Model {}
 
-Schedule.init(
+Schedule_detail.init(
     {
         id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        appointment_date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
-        appointment_time: {
-            type: DataTypes.TIME,
-            allowNull: false,
-        },
-        client_id: {
+        schedule_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'client',
+                model: 'schedule',
                 key: 'id'
             }
         },
-        inspector_id: {
+        service_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'inspector',
+                model: 'service',
                 key: 'id'
             }
         },
@@ -36,9 +29,10 @@ Schedule.init(
     {
         sequelize,
         freezeTableName: true,
+        timestamps: false,
         underscored: true,
-        modelName: 'schedule'
+        modelName: 'schedule_detail'
     }
 );
 
-module.exports = Schedule;
+module.exports = Schedule_detail;
