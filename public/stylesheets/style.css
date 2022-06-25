@@ -8,8 +8,9 @@ body {
     
 }
 
-.wrapper {
-    
+.navbar {
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
 }
 
 .hero .about-us {
@@ -26,13 +27,15 @@ body {
   font-size: 35px;
 }
 
-
+.services h3 {
+    text-align: center;
+}
 
 .services {
-    margin-bottom: 20px;
+    
     padding: 50px;
     height: 300px;
-    background-color: #2590e7;
+    background-color: #2a9df4;
     color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
@@ -40,6 +43,7 @@ body {
 
 .services-two {
     margin-bottom: 20px;
+    
     padding: 50px;
     height: 300px;
     background-color: #2a9df4;
@@ -78,6 +82,49 @@ body {
     margin-bottom: 20px;
     font-size: 36px;
 }
+
+
+
+
+
+
+
+
+
+
+.reviews h3 {
+    text-align: center;
+}
+
+.clients {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    flex: 1;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+  }
+
+
+
+  
+
+  
+
+
+
+
+
+
 
 .sign-up-form {
     width: 100%;
@@ -150,3 +197,17 @@ textarea:valid~label {
 .row .input-group {
     flex-basis: 48%;
 }
+
+
+
+@media screen and (max-width:980px) {
+    .card{
+        flex: 0 85%;
+    }
+}
+ @media screen and (min-wdith:768px){
+    .navbar {
+        border-radius: 0px !important;
+    }
+ }
+    
