@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+}
+
+.hero .about-us {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/images/adobe-stock-home-insp.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 350px;
+  color: white;
+  font-size: 35px;
+}
+
+.services h3 {
+    text-align: center;
+}
+
+.services {
+    
+    padding: 50px;
+    height: 300px;
+    background-color: #2a9df4;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.services-two {
+    margin-bottom: 20px;
+    
+    padding: 50px;
+    height: 300px;
+    background-color: #2a9df4;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.services img {
+    max-height: 200px;
+    width: auto;
+}
+
+.services-two img {
+    max-height: 200px;
+    width: auto;
+    float: right;
+}
+
+.float-right {
+    float: right;
+    margin-right: 20px;
+}
+
+.services h3 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.float-left {
+    float: left;
+    margin-left: 20px;
+}
+
+.services-two h3 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+.reviews h3 {
+    text-align: center;
+}
+
+.clients {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    flex: 1;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+  }
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+.sign-up-form {
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.7), #3551b5), url(../images/AdobeStock_58371096.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sign-up-form form {
+    width: 50%;
+}
+
+
+.input-group {
+    margin-bottom: 35px;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1.5px solid #fff;
+    background: transparent;
+    font-size: 15px;
+}
+
+label {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #fff;
+    cursor: text;
+    transition: 0.2s;
+}
+
+button {
+    padding: 10px 0;
+    color: #fff;
+    outline: none;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+}
+
+input:focus~label,
+input:valid~label, 
+textarea:focus~label,
+textarea:valid~label {
+    top: -35px;
+    font-size: 14px;
+
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row .input-group {
+    flex-basis: 48%;
+}
+
+
+
+@media screen and (max-width:980px) {
+    .card{
+        flex: 0 85%;
+    }
+}
+ @media screen and (min-wdith:768px){
+    .navbar {
+        border-radius: 0px !important;
+    }
+ }
+    

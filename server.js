@@ -22,9 +22,6 @@ sequelize.sync({ force: false }).then(() => {
 
 
 
-
-
-
 //TODO: Connect passportjs
 // var authRouter = require('./routes/auth');
 // var logger = require('morgan');
