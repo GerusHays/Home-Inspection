@@ -10,6 +10,7 @@ const Schedule_detail = require('./Schedule_detail');
 // User belongs to one Client or one Inspector
 User.hasOne(Client, { foreignKey: 'user_id' });
 Client.belongsTo(User, { foreignKey: 'user_id' });
+
 User.hasOne(Inspector, { foreignKey: 'user_id' });
 Inspector.belongsTo(User, { foreignKey: 'user_id' });
 

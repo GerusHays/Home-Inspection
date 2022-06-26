@@ -4,10 +4,6 @@
 
 }
 
-
-
-
-
 .about-us {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/adobe-stock-home-insp.jpeg');
     background-position: center;
@@ -79,14 +75,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 .reviews h3 {
     text-align: center;
 }
@@ -109,18 +97,23 @@
 
 .sign-up-form {
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), #3551b5), url(../images/AdobeStock_58371096.jpeg);
     background-position: center;
     background-size: cover;
     display: flex;
-    align-items: center;
+    padding-top: 20vh;
+    padding: 20vh 20px 20px 50px;
+    padding-bottom: 50px;
     justify-content: center;
+    align-items: flex-start
+    ;
 
 }
 
 .sign-up-form form {
-    width: 50%;
+    width: 50vw;
+    padding: 20px;
 }
 
 
@@ -131,55 +124,45 @@
     color: white;
 }
 
-input,
-textarea {
+.sign-up-form input,
+.sign-up-form textarea {
     width: 100%;
     padding: 10px;
     outline: 0;
     border: 1.5px solid #fff;
+    color: #fff;
     background: transparent;
     font-size: 15px;
 }
 
-label {
+.sign-up-form label {
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
     padding: 10px;
-    color: #fff;
+    color: rgb(255, 255, 255);
     cursor: text;
     transition: 0.2s;
 }
 
-button {
-    padding: 10px 0;
-    color: #fff;
-    outline: none;
-    border: 1px solid #fff;
-    width: 100%;
-    cursor: pointer;
+.sign-up-text {
+    padding: 20px;
 }
 
-input:focus~label,
-input:valid~label,
-textarea:focus~label,
-textarea:valid~label {
+.sign-up-form input:focus~label,
+.sign-up-form input:valid~label,
+.sign-up-form textarea:focus~label,
+.sign-up-form textarea:valid~label {
     top: -35px;
     font-size: 14px;
 
 }
 
-.row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.sign-in {
+    padding-top: 25vh;
+    padding-bottom: 25vh;
 }
-
-.row .input-group {
-    flex-basis: 48%;
-}
-
 
 
 @media screen and (max-width:980px) {
