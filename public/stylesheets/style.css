@@ -107,6 +107,12 @@
     padding: 20px;
 }
 
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
 .sign-up-form {
     width: 100%;
     height: 100vh;
