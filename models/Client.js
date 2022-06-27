@@ -40,10 +40,9 @@ Client.init(
             }
         },
         phone_number: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isNumeric: true,
                 len: [10, 12]
             }
         },
