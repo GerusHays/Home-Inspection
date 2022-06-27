@@ -24,8 +24,7 @@ const serviceData = [
     {
         name: 'Wind Mitigation Inspection',
         description: 'This option includes a wind mitigation inspection that will be performed by our technician.',
-        price: '150',
-
+        price: '150'
     },
     {
         name: 'Chemical Testing',

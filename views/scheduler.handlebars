@@ -9,12 +9,12 @@
   </div>
 
   <div class="row g-5">
-    <div class="col-md-5 col-lg-4 order-md-last">
+    <div id="services-selected" class="col-md-5 col-lg-4 order-md-last">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-secondary">Services</span>
         <span class="badge bg-warning rounded-pill">3</span>
       </h4>
-      <ul class="list-group mb-3">
+      <ul id="list-services" class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between lh-sm">
           <div>
             <h6 class="my-0">Product name</h6>
@@ -132,13 +132,13 @@
         <hr class="my-4" />
         <h4 class="mb-3">Select Services you want to have done on your schedule:</h4>
 
-        <div class="list-group mx-0 w-auto">
+        <div id="service-options" class="list-group mx-0 w-auto">
           {{#each services as |service|}}
           <label class="list-group-item d-flex gap-2">
-            <input class="form-check-input flex-shrink-0" type="checkbox" value="" />
-            <span> {{service.name}}
-              <small class="d-block text-muted">{{service.description }}</small>
-              <small class="d-block text-muted">${{service.price }}</small>
+            <input id="{{service.id}}"class="service form-check-input flex-shrink-0" type="checkbox" value="" />
+            <span id="{{service.name}}"> {{service.name}}
+              <small id="{{service.description }}" class="d-block text-muted">{{service.description }}</small>
+              <small id="{{service.price }}" class="d-block text-muted">${{service.price }}</small>
             </span>
           </label>
           {{/each}}
@@ -150,3 +150,5 @@
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/js/service-confirmed.js"></script>
