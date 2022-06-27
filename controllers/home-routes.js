@@ -44,14 +44,21 @@ router.get('/scheduler', authorized, (req, res) => {
     }
     
     async function renderPage() {
-        const client = await getClient();
-        const services = await getServices();
+        try {
+            const client = await getClient();
+            const services = await getServices();
+            res.render('scheduler', {
+                loggedIn: req.user,
+                client,
+                services
+            })
+        } catch (error) {
+            console.log(error);
+            res.redirect('/');
+        }
+        
         // console.log(services, client);
-        res.render('scheduler', {
-            loggedIn: req.user,
-            client,
-            services
-        })
+        
         
     }
     
