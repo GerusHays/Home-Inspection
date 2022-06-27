@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strategic Investments Home Inspection</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://kit.fontawesome.com/0b7dd66cc0.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="d-flex flex-wrap justify-content-center py-3 border-bottom bg-dark text-white">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="me-2 fs-4 ps-3">Strategic Investments Home Inspection</span>
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/#about-us" class="nav-link text-white">About Us</a></li>
+          <li class="nav-item"><a href="/#services"class="nav-link text-white">Services</a></li>
+          <li class="nav-item"><a href="/#contact-us" class="nav-link text-white">Contact</a></li>
+          <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2 text-white">Schedule an Appointment!</button></li>
+          <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2 ">Login</button></li>
+          <li class="nav-item px-2"><button type="button" class="btn btn-warning">Sign-up</button></li>
+        </ul>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer class="py-3 my-4">
+        <p class="text-center text-muted">
+          © 2022 <strong>Strategic Investments Home Inspection LLC</strong>
+          by 
+          <a href="https://github.com/GerusHays">Gerus Hays</a>,
+          <a href="https://github.com/15kmaddock">Kody Maddock</a> &
+          <a href="https://github.com/lrpineda">Luis Pineda</a>
+        </p>
+      </footer>
+    </div>
+
+    {{#if loggedIn}}
+      <script src="../../public/js/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
