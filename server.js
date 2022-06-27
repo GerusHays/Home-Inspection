@@ -1,5 +1,7 @@
 const path = require('path');
 const express = require('express');
+const session = require('express-session');
+
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
@@ -26,7 +28,7 @@ sequelize.sync({ force: false }).then(() => {
 // var authRouter = require('./routes/auth');
 // var logger = require('morgan');
 // var passport = require('passport');
-// var session = require('express-session');
+
 
 // var SQLiteStore = require('connect-sqlite3')(session);
 

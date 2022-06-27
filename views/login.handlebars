@@ -1,24 +1,21 @@
-<h1>Sign in</h1>
-<form action="/login/password" method="post">
-    <section>
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" autocomplete="username" required autofocus>
-    </section>
-    <section>
-        <label for="current-password">Password</label>
-        <input id="current-password" name="password" type="password" autocomplete="current-password" required>
-    </section>
-    <button type="submit">Sign in</button>
-</form>
-<h1>Sign up</h1>
-<form action="/signup" method="post">
-    <section>
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" autocomplete="username" required>
-    </section>
-    <section>
-        <label for="new-password">Password</label>
-        <input id="new-password" name="password" type="password" autocomplete="new-password" required>
-    </section>
-    <button type="submit">Sign up</button>
-</form>
+<section class="text-center form-signin w-50 m-auto sign-in">
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Sign in</button>
+  </form>
+</section>

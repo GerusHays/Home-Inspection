@@ -37,7 +37,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     User.create({
         user_name: req.body.user_name,
-        password: req.body.password
+        password: req.body.password,
+        email: req.body.email
     })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
