@@ -22,9 +22,13 @@
           <li class="nav-item"><a href="/#about-us" class="nav-link text-white">About Us</a></li>
           <li class="nav-item"><a href="/#services"class="nav-link text-white">Services</a></li>
           <li class="nav-item"><a href="/#contact-us" class="nav-link text-white">Contact</a></li>
-          <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2 text-white">Schedule an Appointment!</button></li>
-          <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2 ">Login</button></li>
-          <li class="nav-item px-2"><button type="button" class="btn btn-warning">Sign-up</button></li>
+          {{#if loggedIn}}
+          <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2 text-white" id="scheduler-btn">Schedule an Appointment!</button></li>
+          <li class="nav-item px-2"><button type="button" class="btn btn-warning" id="logout">Log Out</button></li>
+          {{else}}
+          <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2" id="login-btn">Login</button></li>
+          <li class="nav-item px-2"><button type="button" class="btn btn-warning" id="signup-btn">Sign-up</button></li>
+          {{/if}}
         </ul>
       </header>
       <main>
@@ -43,9 +47,11 @@
     </div>
 
     {{#if loggedIn}}
-      <script src="../../public/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
+      <script src="/js/scheduler.js"></script>
     {{/if}}
-    <script src="/js/sign-up.js"></script>
+    
+    <script src="/js/buttons.js"></script>
   </body>
 
 </html>
