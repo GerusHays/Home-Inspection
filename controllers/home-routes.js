@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const authorized = require('../utils/authorized')
 
-// const { User } = require('../models');
+const { User, Client, Service } = require('../models');
 
 router.get('/', (req, res) => {
     res.render('homepage', { loggedIn: req.user });    
@@ -23,7 +23,39 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/scheduler', authorized, (req, res) => {
-    res.render('scheduler', {loggedIn: req.user});
+    async function getClient() {
+        const client = await Client.findOne({ 
+            where: { user_id: req.user.id },
+            include: [
+                { 
+                    model: User,
+                    attributes: ['email']
+                }
+            ]
+        });
+        return client.dataValues;
+    }
+
+    async function getServices() {
+        const services = await Service.findAll({
+            order: [ ['name', 'ASC'] ]
+        });
+        return services.map(service => service.dataValues);
+    }
+    
+    async function renderPage() {
+        const client = await getClient();
+        const services = await getServices();
+        // console.log(services, client);
+        res.render('scheduler', {
+            loggedIn: req.user,
+            client,
+            services
+        })
+        
+    }
+    
+    renderPage();
 });
 
 module.exports = router;
