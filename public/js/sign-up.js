@@ -44,7 +44,7 @@ async function signupFormHandler(event) {
 
             if (client_response.ok) {
                 console.log('Client created');
-                window.location.href = '/';
+                window.location.href = '/login';
             } else {
                 alert('Error creating client');
             }
