@@ -22,7 +22,9 @@
           <li class="nav-item"><a href="/#about-us" class="nav-link text-white">About Us</a></li>
           <li class="nav-item"><a href="/#services"class="nav-link text-white">Services</a></li>
           <li class="nav-item"><a href="/#contact-us" class="nav-link text-white">Contact</a></li>
+          {{#if loggedIn}}
           <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2 text-white">Schedule an Appointment!</button></li>
+          {{/if}}
           <li class="nav-item px-2"><button type="button" class="btn btn-outline-light me-2 ">Login</button></li>
           <li class="nav-item px-2"><button type="button" class="btn btn-warning">Sign-up</button></li>
         </ul>

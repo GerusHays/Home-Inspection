@@ -16,7 +16,7 @@ router.get('/sign-up', (req, res) => {
     res.render('sign-up');
 });
 
-router.get('scheduler', (req, res) => {
+router.get('/scheduler', (req, res) => {
     res.render('scheduler');
 });
 

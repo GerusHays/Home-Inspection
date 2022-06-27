@@ -108,7 +108,7 @@
 }
 
 .sign-up-form {
-    height: 100vh;
+    
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), #3551b5), url(../images/AdobeStock_58371096.jpeg);
     background-position: center;
     background-size: cover;
@@ -123,6 +123,7 @@
 
 .sign-up-text, .signup-form-section{
     width: 35vw;
+    padding: 50px;
 }
 
 
@@ -156,9 +157,6 @@
     transition: 0.2s;
 }
 
-.sign-up-text {
-    padding: 20px;
-}
 
 .sign-up-form input:focus~label,
 .sign-up-form input:valid~label,
