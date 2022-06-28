@@ -3,6 +3,10 @@
 ## Description
 This website was created to help Strategic Investment Home Inspection LLC promote and run their business.
 
+## Screenshot:
+![Home-Inspection-Screenshot](./public/images/Screenshot-main.JPG)
+![Home-Inspection-Screenshot](./public/images/Screenshot-1.JPG)
+
 ## Table of Contents
 * Technologies Used
 * Installation
