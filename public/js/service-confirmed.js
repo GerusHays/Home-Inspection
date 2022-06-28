@@ -16,6 +16,7 @@ const createServiceItem = (service) => {
 
 $(document).on('click', '.service', function(e) {
     if(e.target.checked) {
+        
         console.log($(this).parent().find('span').attr('id'));
     } else{
         console.log('unchecked');
