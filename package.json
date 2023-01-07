@@ -2,7 +2,7 @@
   "name": "home-inspection",
   "version": "1.0.0",
   "description": "Home inspection website",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": "16"
   },
